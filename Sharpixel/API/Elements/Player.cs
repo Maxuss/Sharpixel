@@ -408,12 +408,24 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class VampireZ
     {
+        /// <summary>
+        /// Amount of coins
+        /// </summary>
         [JsonProperty("coins")] public ulong Coins;
 
+        /// <summary>
+        /// Deaths as a human
+        /// </summary>
         [JsonProperty("human_deaths")] public int DeathsHuman;
 
+        /// <summary>
+        /// Deaths as a vampire
+        /// </summary>
         [JsonProperty("vampire_deaths")] public int DeathsVampire;
 
+        /// <summary>
+        /// Kills as vampire
+        /// </summary>
         [JsonProperty("vampire_kills")] public int KillsVampire;
     }
 
@@ -426,6 +438,9 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class Arcade
     {
+        /// <summary>
+        /// Player's coins
+        /// </summary>
         [JsonProperty("coins")] public long Coins;
 
         /// <summary>
@@ -433,6 +448,9 @@ namespace Sharpixel.API.Elements
         /// </summary>
         [JsonExtensionData] public IDictionary<string, JToken> ExtensionData;
 
+        /// <summary>
+        /// Whatever the hell this is
+        /// </summary>
         [JsonProperty("lastTourneyAd")] public ulong LastTourneyAd;
     }
 
@@ -445,18 +463,39 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class Bedwars
     {
+        /// <summary>
+        /// Amount of beds broken
+        /// </summary>
         [JsonProperty("beds_broken_bedwars")] public uint BedsBroken;
 
+        /// <summary>
+        /// Amount of beds lost
+        /// </summary>
         [JsonProperty("beds_lost_bedwars")] public uint BedsLost;
 
+        /// <summary>
+        /// Amount of crates owned
+        /// </summary>
         [JsonProperty("bedwars_boxes")] public int Boxes;
 
+        /// <summary>
+        /// Lates history of chest drops
+        /// </summary>
         [JsonProperty("chest_history_new")] public string[] ChestHistory;
 
+        /// <summary>
+        /// Bedwars coins of player
+        /// </summary>
         [JsonProperty("coins")] public ulong Coins;
 
+        /// <summary>
+        /// Deaths of player
+        /// </summary>
         [JsonProperty("deaths_bedwars")] public uint Deaths;
 
+        /// <summary>
+        /// Amount of player's deaths
+        /// </summary>
         public long Experience;
 
         /// <summary>
@@ -464,24 +503,54 @@ namespace Sharpixel.API.Elements
         /// </summary>
         [JsonExtensionData] public IDictionary<string, JToken> ExtensionData;
 
+        /// <summary>
+        /// Final deaths of player
+        /// </summary>
         [JsonProperty("final_deaths_bedwars")] public uint FinalDeaths;
 
+        /// <summary>
+        /// Final kills of player
+        /// </summary>
         [JsonProperty("final_kills_bedwars")] public uint FinalKills;
 
+        /// <summary>
+        /// Amount of games played
+        /// </summary>
         [JsonProperty("games_played_bedwars")] public ulong GamesPlayed;
 
+        /// <summary>
+        /// Total amount of kills
+        /// </summary>
         [JsonProperty("kills_bedwars")] public uint Kills;
 
+        /// <summary>
+        /// Total amount of loses 
+        /// </summary>
         [JsonProperty("losses_bedwars")] public uint Loses;
 
+        /// <summary>
+        /// Total amount of cosmetics chests opened
+        /// </summary>
         [JsonProperty("Bedwars_openedChests")] public uint OpenedChests;
 
+        /// <summary>
+        /// Bedwars packages of player
+        /// </summary>
         [JsonProperty("packages")] public string[] Packages;
 
+        /// <summary>
+        /// Winstreak of player
+        /// </summary>
         [JsonProperty("winstreak")] public int Streak;
 
+        /// <summary>
+        /// Total amount of wins of player
+        /// </summary>
         [JsonProperty("wins_bedwars")] public uint Wins;
 
+        /// <summary>
+        /// Favorites of player that appear at the first page of shop
+        /// </summary>
         public string[] Favorites { get; set; }
 
         [OnDeserialized]
@@ -501,13 +570,22 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class PlayerDataSkyBlock
     {
+        /// <summary>
+        /// Profiles of player
+        /// </summary>
         [JsonProperty("profiles")] public IDictionary<string, SkyBlockProfile> Profiles;
     }
 
     public sealed class SkyBlockProfile
     {
+        /// <summary>
+        /// Cute fruit name of profile
+        /// </summary>
         [JsonProperty("cute_name")] public string Fruit;
 
+        /// <summary>
+        /// Skyblock profile ID
+        /// </summary>
         [JsonProperty("profile_id")] public string ID;
     }
 
@@ -517,12 +595,24 @@ namespace Sharpixel.API.Elements
 
     public sealed class MurderMystery
     {
+        /// <summary>
+        /// Most recent chest drops history
+        /// </summary>
         [JsonProperty("chest_history_new")] public string[] ChestHistory;
 
+        /// <summary>
+        /// Total amount of chests
+        /// </summary>
         [JsonProperty("mm_chests")] public uint Chests;
 
+        /// <summary>
+        /// Total amount of player's coins
+        /// </summary>
         [JsonProperty("coins")] public ulong Coins;
 
+        /// <summary>
+        /// Chance of player to become detective (in percents)
+        /// </summary>
         [JsonProperty("detective_chance")] public int DetectiveChance;
 
         /// <summary>
@@ -530,19 +620,40 @@ namespace Sharpixel.API.Elements
         /// </summary>
         [JsonExtensionData] public IDictionary<string, JToken> ExtensionData;
 
+        /// <summary>
+        /// Total amount of games played
+        /// </summary>
         [JsonProperty("games")] public uint GamesPlayed;
 
+        /// <summary>
+        /// Total amount of player's kills
+        /// </summary>
         [JsonProperty("kills")] public long Kills;
 
+        /// <summary>
+        /// Chance of player to become murderer (in percents)
+        /// </summary>
         [JsonProperty("murderer_chance")] public int MurdererChance;
 
+        /// <summary>
+        /// Total amount of opened chests
+        /// </summary>
         [JsonProperty("MurderMystery_openedChests")]
         public long OpenedChests;
 
+        /// <summary>
+        /// Murder Mystery packages of player
+        /// </summary>
         [JsonProperty("packages")] public string[] Packages;
 
+        /// <summary>
+        /// Times the player was hero
+        /// </summary>
         [JsonProperty("was_hero")] public int TimesHero;
 
+        /// <summary>
+        /// Total amount of player's wins
+        /// </summary>
         [JsonProperty("wins")] public uint Wins;
     }
 
@@ -556,8 +667,14 @@ namespace Sharpixel.API.Elements
     public sealed class Pit
     {
 #nullable enable
+        /// <summary>
+        /// Main profile data AFTER PROTOTYPE RELEASE
+        /// </summary>
         [JsonProperty("profile")] public PitProfile? Profile;
 
+        /// <summary>
+        /// Main profile data BEFORE PROTOTYPE RELEASE
+        /// </summary>
         [JsonProperty("pit_stats_ptl")] public PrototypePitProfile? PrototypeProfile;
 #nullable disable
     }
@@ -567,12 +684,24 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class PitProfile
     {
+        /// <summary>
+        /// Armor of player
+        /// </summary>
         [JsonProperty("inv_armor")] public PitContainer ArmorInventory;
 
+        /// <summary>
+        /// Total amount of players coins
+        /// </summary>
         [JsonProperty("cash")] public float Cash;
 
+        /// <summary>
+        /// Death recaps of player
+        /// </summary>
         [JsonProperty("death_recaps")] public PitContainer DeathRecaps;
 
+        /// <summary>
+        /// Represents data of player's ender chest
+        /// </summary>
         [JsonProperty("inv_enderchest")] public PitContainer EnderChest;
 
         /// <summary>
@@ -580,24 +709,67 @@ namespace Sharpixel.API.Elements
         /// </summary>
         [JsonExtensionData] public IDictionary<string, JToken> ExtensionData;
 
+        /// <summary>
+        /// Represents favorites for hotbar
+        /// </summary>
         [JsonProperty("hotbar_favorites")] public int[] HotbarFavorites;
 
+        /// <summary>
+        /// Inventory of player
+        /// </summary>
         [JsonProperty("inv_contents")] public PitContainer Inventory;
 
+        /// <summary>
+        /// Item stash of player
+        /// </summary>
         [JsonProperty("item_stash")] public PitContainer ItemStash;
 
+        /// <summary>
+        /// Data of Kinq Quest. Contains data in format <see cref="string"/> : <see cref="long"/>
+        /// </summary>
         [JsonProperty("king_quest")] public IDictionary<string, long> KingQuest;
 
-        [JsonProperty("last_save")] public ulong LastSave;
+        /// <summary>
+        /// When Last save was in Unix Timestamp
+        /// </summary>
+        [JsonProperty("last_save")] public ulong UnixLastSave;
 
+        /// <summary>
+        /// When Last save was in DateTime format
+        /// </summary>
+        public DateTime DateLastSave
+        {
+            get
+            {
+                DateTime convert = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                return convert.AddMilliseconds(UnixLastSave).ToLocalTime();
+            }
+        }
+
+        /// <summary>
+        /// Leaderboard stats of player
+        /// </summary>
         [JsonProperty("leaderboard_stats")] public IDictionary<string, int> Leaderboard;
 
+        /// <summary>
+        /// Outgoing trade offers of player
+        /// </summary>
         [JsonProperty("outgoing_offers")] public object[] OutgoingOffers;
 
+        /// <summary>
+        /// Armor in Spire Stash of player
+        /// </summary>
+        // what the hell does that mean tho
         [JsonProperty("spire_stash_armor")] public PitContainer SpireStashArmor;
 
+        /// <summary>
+        /// Inventory in Spire Stash
+        /// </summary>
         [JsonProperty("spire_stash_inv")] public PitContainer SpireStashInventory;
 
+        /// <summary>
+        /// Unlocks of player
+        /// </summary>
         [JsonProperty("unlocks")] public PitUnlock[] Unlocks;
     }
 
@@ -606,12 +778,24 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class PrototypePitProfile
     {
+        /// <summary>
+        /// Total amount of arrow hits
+        /// </summary>
         [JsonProperty("arrow_hits")] public uint ArrowHits;
 
+        /// <summary>
+        /// Total amount of arrows fired by player
+        /// </summary>
         [JsonProperty("arrows_fired")] public uint ArrowsFired;
 
+        /// <summary>
+        /// Total amount of connects to pit server by player
+        /// </summary>
         [JsonProperty("joins")] public uint Connects;
 
+        /// <summary>
+        /// Total amount of deaths of player
+        /// </summary>
         [JsonProperty("deaths")] public uint Deaths;
 
         /// <summary>
@@ -619,10 +803,19 @@ namespace Sharpixel.API.Elements
         /// </summary>
         [JsonExtensionData] public IDictionary<string, JToken> ExtensionData;
 
+        /// <summary>
+        /// Total amount of times player jumped into the pit
+        /// </summary>
         [JsonProperty("jumped_into_pit")] public uint JumpedIntoPit;
 
+        /// <summary>
+        /// Total amount of kills by player
+        /// </summary>
         [JsonProperty("kills")] public uint Kills;
 
+        /// <summary>
+        /// Total amount of left clicks by player
+        /// </summary>
         [JsonProperty("left_clicks")] public uint LeftClicks;
     }
 
@@ -631,8 +824,14 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class PitContainer
     {
+        /// <summary>
+        /// Main data of container
+        /// </summary>
         [JsonProperty("data")] public int[] Data;
 
+        /// <summary>
+        /// Type of container
+        /// </summary>
         [JsonProperty("type")] public int Type;
     }
 
@@ -641,10 +840,28 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class PitUnlock
     {
-        [JsonProperty("acquireDate")] public ulong AcquireDate;
+        /// <summary>
+        /// Date of acquiring of unlock in Unix Timestamp
+        /// </summary>
+        [JsonProperty("acquireDate")] public ulong UnixAcquireDate;
 
+        public DateTime DateAcquireDate
+        {
+            get
+            {
+                DateTime convert = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                return convert.AddMilliseconds(UnixAcquireDate).ToLocalTime();
+            }
+        }
+
+        /// <summary>
+        /// Key of unlock
+        /// </summary>
         [JsonProperty("key")] public string Key;
 
+        /// <summary>
+        /// Tier of unlock
+        /// </summary>
         [JsonProperty("tier")] public int Tier;
     }
 
@@ -657,8 +874,14 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class UHC
     {
+        /// <summary>
+        /// Total amount of coins of player
+        /// </summary>
         [JsonProperty("coins")] public ulong Coins;
 
+        /// <summary>
+        /// Total amount of deaths by player
+        /// </summary>
         [JsonProperty("deaths")] public ulong Deaths;
 
         /// <summary>
@@ -666,6 +889,9 @@ namespace Sharpixel.API.Elements
         /// </summary>
         [JsonExtensionData] public IDictionary<string, JToken> ExtensionData;
 
+        /// <summary>
+        /// UHC Packages of player
+        /// </summary>
         [JsonProperty("packages")] public string[] Packages;
     }
 
