@@ -1,4 +1,5 @@
 ﻿using System;
+using Sharpixel.API.Requests;
 
 namespace Sharpixel.API
 {
@@ -17,12 +18,27 @@ namespace Sharpixel.API
         }
         
         /// <summary>
-        /// Authenticate client
+        /// Authenticate client with key
+        /// <seealso cref="Client()"/>
         /// </summary>
         /// <param name="key">Your hypixel API key</param>
         public Client(string key)
         {
             Key = key;
         }
+
+        /// <summary>
+        /// Authenticate client without giving key.
+        /// <seealso cref="Client(string)"/>
+        /// </summary>
+        public Client()
+        {
+            Key = null;
+        }
+
+        /// <summary>
+        /// Requester for simple requests
+        /// </summary>
+        public IRequest Request { get; set; }
     }
 }
