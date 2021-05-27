@@ -48,7 +48,22 @@ namespace Sharpixel.API.Requests
                 case SpecializedDestination.Player:
                     RequestUri = $"https://api.hypixel.net/player?key="+KEY+$"&uuid={param}";
                     break;
+                case SpecializedDestination.Friends:
+                    RequestUri = $"https://api.hypixel.net/friends?key=" + KEY + $"&uuid={param}";
+                    break;
             }
+            var request = WebRequest.Create(RequestUri);
+            request.Method = "GET";
+            using WebResponse webResponse = request.GetResponse();
+            using Stream webStream = webResponse.GetResponseStream();
+            using var reader = new StreamReader(webStream);
+            string data = reader.ReadToEnd();
+            JObject d = JsonConvert.DeserializeObject<JObject>(data);
+            ComplexResponse<T> r = new ComplexResponse<T>(d, data);
+            r.IsSuccessful = (bool)d["success"];
+            r.Original = d;
+            OnReceiveResponse(r);
+            Response = r;
         }
 
         public void MakeRequest()
