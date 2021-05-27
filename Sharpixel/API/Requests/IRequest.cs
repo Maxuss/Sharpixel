@@ -19,14 +19,33 @@ namespace Sharpixel.API.Requests
         public SortedDictionary<string, string> RequestParameters { get; set; }
 
         /// <summary>
-        /// Encapsulated void as <see cref="Action"/>, executed on receiving response.
-        /// Takes <see cref="Response"/> abstract class as type param.
+        /// Response of request.
         /// </summary>
-        public Action<Response> OnReceiveResponse { get; set; }
+        public IResponse Response { get; set; }
 
         /// <summary>
         /// Creates the request.
         /// </summary>
-        public abstract void Create();
+        /// <param name="URI">String representing URL of request</param>
+        public abstract void Create(string URI);
+
+        /// <summary>
+        /// Creates the request.
+        /// </summary>
+        /// <param name="URI">String representing URL of request</param>
+        /// <param name="params">Parameters of request</param>
+        public abstract void Create(string URI, SortedDictionary<string, string> @params);
+
+        /// <summary>
+        /// Creates the request.
+        /// </summary>
+        /// <param name="URI">String representing URL of request</param>
+        /// <param name="params">Parameters of request</param>
+        /// <param name="OnResponse">Action, which will be executed on finishing request</param>
+        public abstract void Create(string URI, SortedDictionary<string, string> @params, Action<IResponse> OnResponse);
+        /// <summary>
+        /// Sends request to API and return Response
+        /// </summary>
+        public abstract void MakeRequest();
     }
 }

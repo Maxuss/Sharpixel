@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 using System.Runtime.Serialization;
 using Newtonsoft.Json.Converters;
 
-namespace Sharpixel.API.Requests.Elements
+namespace Sharpixel.API.Elements
 {
     /// <summary>
     /// Class used for storing data from request to <a href="https://api.hypixel.net/player">Player API</a>
@@ -30,16 +30,34 @@ namespace Sharpixel.API.Requests.Elements
     /// </summary>
     public sealed class PlayerRequest
     {
+        /// <summary>
+        /// Represents Hypixel ID of player
+        /// </summary>
         [JsonProperty("id")]
         public string ID;
+        /// <summary>
+        /// Represents Mojang UUID of player
+        /// </summary>
         [JsonProperty("uuid")]
         public string UUID;
+        /// <summary>
+        /// Represents Nickname of player
+        /// </summary>
         [JsonProperty("playername")]
         public string PlayerName;
+        /// <summary>
+        /// Unix Timestamp in milliseconds since when player first logged in
+        /// </summary>
         [JsonProperty("firstLogin")]
         public ulong FirstLogin;
+        /// <summary>
+        /// Unix Timestamp in milliseconds since when player last logged in
+        /// </summary>
         [JsonProperty("lastLogin")]
         public ulong LastLogin;
+        /// <summary>
+        /// All known aliases of player, a.k.a. all previous nicknames of player.
+        /// </summary>
         [JsonProperty("knownAliases")]
         public string[] KnownAliases;
         [JsonProperty("knownAliasesLower")]
