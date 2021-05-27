@@ -16,10 +16,11 @@ namespace Sharpixel.API.Requests
     /// <typeparam name="T">Type of return class data</typeparam>
     public sealed class ComplexRequest<T> : IRequest
     {
+        public string KEY { get; set; }
         public string RequestUri { get; set; }
-        public SortedDictionary<string, string> RequestParameters { get; set; }
         public Action<ComplexResponse<T>> OnReceiveResponse { get; set; }
         public IResponse Response { get; set; }
+        public RequestParameters RequestParams { get; set; }
 
         public void Create(string URI)
         {
@@ -29,13 +30,13 @@ namespace Sharpixel.API.Requests
         public void Create(string URI, SortedDictionary<string, string> @params)
         {
             RequestUri = URI;
-            RequestParameters = @params;
+            RequestParams = new(@params);
         }
 
         public void Create(string URI, SortedDictionary<string, string> @params, Action<IResponse> OnResponse)
         {
             RequestUri = URI;
-            RequestParameters = @params;
+            RequestParams = new(@params);
             OnReceiveResponse += OnResponse;
         }
 
@@ -43,17 +44,7 @@ namespace Sharpixel.API.Requests
         {
             try
             {
-                string url;
-                if (RequestParameters != null)
-                {
-                    url = $"{RequestUri}?{RequestParameters.FirstOrDefault().Key}={RequestParameters[RequestParameters.FirstOrDefault().Key]}";
-                    RequestParameters.Remove(RequestParameters.FirstOrDefault().Key);
-                    foreach (string req in RequestParameters.Keys)
-                    {
-                        url += $"&{req}={RequestParameters[req]}";
-                    }
-                }
-                else url = RequestUri;
+                string url = RequestParams.GenerateURL(RequestUri);
 
                 var request = WebRequest.Create(url);
                 request.Method = "GET";

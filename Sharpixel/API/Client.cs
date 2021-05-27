@@ -1,4 +1,5 @@
 ﻿using System;
+using Sharpixel.API.Elements;
 using Sharpixel.API.Requests;
 
 namespace Sharpixel.API
