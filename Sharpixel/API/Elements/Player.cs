@@ -368,13 +368,25 @@ namespace Sharpixel.API.Elements
     /// </summary>
     public sealed class HeadData
     {
+        /// <summary>
+        /// Reaction to sacrification of head
+        /// </summary>
         [JsonProperty("sacrifice")] [JsonConverter(typeof(StringEnumConverter))]
         public SacrificeReaction SacrificeReaction;
 
+        /// <summary>
+        /// Skywars mode it was obtained in
+        /// </summary>
         [JsonProperty("mode")] public string SkywarsMode;
 
+        /// <summary>
+        /// Unix Timestamp of when it was obtained 
+        /// </summary>
         [JsonProperty("timestamp")] public ulong TimeStamp;
 
+        /// <summary>
+        /// UUID of head
+        /// </summary>
         [JsonProperty("uuid")] public string UUID;
     }
 
